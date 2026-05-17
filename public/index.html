@@ -331,13 +331,7 @@
   /* ── Leaderboard ── */
   .controls-row {
     display: flex; align-items: center; justify-content: space-between;
-    padding-bottom: 12px; flex-wrap: wrap; gap: 10px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 0;
-  }
-  @media (max-width: 480px) {
-    .controls-row { gap: 6px; }
-    .refresh-btn { font-size: 9px; padding: 5px 8px; letter-spacing: 0.5px; }
+    margin-bottom: 16px; flex-wrap: nowrap; gap: 10px;
   }
 
   .results-count { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); }
@@ -478,19 +472,17 @@
 
   <!-- ── Leaderboard section ── -->
   <div id="leaderboardSection" style="display:none">
-    <div class="leaderboard">
-      <div style="padding:12px 20px 0;">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid var(--border);">
-          <div class="results-count" id="resultsCount"></div>
-          <div style="display:flex;gap:8px;align-items:center;margin-left:auto;">
-            <button class="refresh-btn" id="yesterdayBtn" onclick="toggleYesterdayLeaderboard()" style="display:none">Yesterday's Leaderboard</button>
-            <button class="refresh-btn" id="refreshBtn" onclick="refreshLeaderboardOnly()">↻ Refresh</button>
-          </div>
-        </div>
-        <div id="yesterdayBanner" style="display:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;text-align:center;padding:6px 0;border-bottom:1px solid rgba(240,180,41,0.2);">
-          📅 Viewing Yesterday's Leaderboard
-        </div>
+    <div class="controls-row">
+      <div class="results-count" id="resultsCount"></div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <button class="refresh-btn" id="yesterdayBtn" onclick="toggleYesterdayLeaderboard()" style="display:none">Yesterday's Leaderboard</button>
+        <button class="refresh-btn" id="refreshBtn" onclick="refreshLeaderboardOnly()">↻ Refresh</button>
       </div>
+    </div>
+    <div id="yesterdayBanner" style="display:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;text-align:center;padding:6px 0;border-bottom:1px solid rgba(240,180,41,0.2);">
+      📅 Viewing Yesterday's Leaderboard
+    </div>
+    <div class="leaderboard">
       <div class="lb-header">
         <span>Rank</span>
         <span>Player</span>
