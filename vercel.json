@@ -2,11 +2,5 @@
   "rewrites": [
     { "source": "/api/leaderboard/(.*)", "destination": "/api/leaderboard" },
     { "source": "/api/cloudsave/(.*)",   "destination": "/api/cloudsave"   }
-  ],
-  "crons": [
-    {
-      "path": "/api/trigger-snapshot",
-      "schedule": "55 23 * * *"
-    }
   ]
 }
